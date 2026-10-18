@@ -144,6 +144,9 @@
     padding:120px 0 90px;
     position:relative;
   }
+  @media (max-width:700px){
+    header.hero{ padding:56px 0 50px; }
+  }
   .hero .wrap{ max-width:920px; }
   .hero h1{
     font-family:var(--serif);
@@ -277,6 +280,9 @@
 
   /* ---------- COST ---------- */
   .cost{ background:var(--tussock); padding:110px 0; }
+  @media (max-width:700px){
+    .cost{ padding:48px 0; }
+  }
   .cost h2{
     font-family:var(--serif); font-weight:400;
     font-size:clamp(28px,3.8vw,42px);
@@ -317,6 +323,9 @@
     background:var(--ink);
     color:var(--sand);
     padding:110px 0;
+  }
+  @media (max-width:700px){
+    .philosophy{ padding:48px 0; }
   }
   .philosophy .eyebrow{ color:var(--tussock); }
   .philosophy .eyebrow::before{ background:var(--tussock); }
@@ -366,6 +375,9 @@
 
   /* ---------- PROCESS ---------- */
   .process{ padding:120px 0; }
+  @media (max-width:700px){
+    .process{ padding:50px 0; }
+  }
   .process-head{
     display:flex; justify-content:space-between; align-items:flex-end;
     margin-bottom:70px; gap:30px; flex-wrap:wrap;
@@ -433,6 +445,9 @@
 
   /* ---------- TOOLKITS ---------- */
   .toolkits{ background:var(--peach); padding:120px 0; }
+  @media (max-width:700px){
+    .toolkits{ padding:50px 0; }
+  }
   .toolkits-head{ max-width:640px; margin-bottom:60px; }
   .toolkits-head h2{
     font-family:var(--serif); font-weight:400;
@@ -517,6 +532,21 @@
   .funding-src{
     margin-top:18px; font-family:var(--mono); font-size:12.5px; color:var(--gold);
   }
+  .sponsor-strip{
+    margin-top:22px;
+    border:1px dashed var(--gold);
+    border-radius:6px;
+    padding:20px 26px;
+    text-align:center;
+  }
+  .sponsor-strip p{
+    font-size:14.5px; line-height:1.65; color:var(--ink-soft); max-width:680px; margin:0 auto;
+  }
+  .sponsor-strip strong{ color:var(--ink); }
+  .sponsor-strip a{ color:var(--gold); font-weight:600; text-decoration:underline; }
+  @media (max-width:760px){
+    .sponsor-strip{ padding:18px 20px; }
+  }
 
   /* ---------- FOUNDER ---------- */
   .founder{ padding:100px 0; }
@@ -554,6 +584,9 @@
     background:var(--ink); color:var(--sand);
     padding:120px 0; text-align:center;
   }
+  @media (max-width:700px){
+    .cta{ padding:56px 0; }
+  }
   .cta .eyebrow{ justify-content:center; color:var(--tussock);}
   .cta .eyebrow::before{ background:var(--tussock); }
   .cta h2{
@@ -570,6 +603,9 @@
 
   /* ---------- SITE LINKS ---------- */
   .sitelinks{ padding:90px 0 40px; }
+  @media (max-width:700px){
+    .sitelinks{ padding:48px 0 32px; }
+  }
   .sitelinks-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
@@ -918,6 +954,10 @@
         <div class="funding-src">Funded by Workplace AI Coaching →</div>
       </div>
     </div>
+
+    <div class="sponsor-strip">
+      <p><strong>Workplace AI Coaching</strong> currently funds one day a week of this work. As demand grows, we're looking for other organisations to back additional days of capacity — if that's something your company would consider, <a href="mailto:workplaceaicoaching@gmail.com">get in touch</a>.</p>
+    </div>
   </div>
 </section>
 
@@ -983,10 +1023,9 @@
 </footer>
 
 <div id="cookie-banner" class="cookie-banner" hidden>
-  <p>This site uses cookies, including Google Analytics, to understand how visitors use it. You can accept or decline.</p>
+  <p>This site uses cookies, including Google Analytics, to understand how visitors use it.</p>
   <div class="cookie-actions">
-    <button id="cookie-decline" class="btn btn-ghost-cookie">Decline</button>
-    <button id="cookie-accept" class="btn btn-dark">Accept</button>
+    <button id="cookie-close" class="btn btn-dark">Close</button>
   </div>
 </div>
 
@@ -1029,15 +1068,9 @@
       banner.hidden = false;
     }
 
-    document.getElementById('cookie-accept').addEventListener('click', ()=>{
+    document.getElementById('cookie-close').addEventListener('click', ()=>{
       gtag('consent', 'update', { 'analytics_storage': 'granted' });
       setCookie('lucid_cookie_consent', 'granted', 180);
-      banner.hidden = true;
-      banner.style.display = 'none';
-    });
-
-    document.getElementById('cookie-decline').addEventListener('click', ()=>{
-      setCookie('lucid_cookie_consent', 'denied', 180);
       banner.hidden = true;
       banner.style.display = 'none';
     });
