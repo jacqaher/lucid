@@ -646,6 +646,24 @@
     color:var(--ink-soft);
   }
 
+  /* ---------- PRIVACY ---------- */
+  .privacy{ padding:24px 0 10px; border-top:1px solid var(--line); }
+  .privacy-details summary{
+    font-family:var(--serif); font-weight:400; font-size:16px;
+    cursor:pointer; list-style:none; color:var(--ink-soft);
+    display:inline-flex; align-items:center; gap:8px;
+  }
+  .privacy-details summary::-webkit-details-marker{ display:none; }
+  .privacy-details summary::before{
+    content:"+"; color:var(--gold); font-family:var(--sans); font-weight:600; width:14px;
+  }
+  .privacy-details[open] summary::before{ content:"–"; }
+  .privacy-details p{
+    font-size:13.5px; line-height:1.7; color:var(--ink-soft); max-width:760px;
+    margin:14px 0 0;
+  }
+  .privacy-details a{ color:var(--gold); text-decoration:underline; }
+
   /* ---------- FOOTER ---------- */
   footer{ padding:50px 0; }
   footer .wrap{
@@ -680,6 +698,7 @@
     color:rgba(250,247,237,0.85);
     margin:0;
   }
+  .cookie-banner p a{ color:var(--gold); text-decoration:underline; }
   .cookie-actions{ display:flex; gap:12px; flex-shrink:0; }
   .cookie-actions button{
     font-family:var(--sans);
@@ -1010,6 +1029,15 @@
   </div>
 </section>
 
+<section class="privacy" id="privacy">
+  <div class="wrap">
+    <details class="privacy-details">
+      <summary>Privacy Policy</summary>
+      <p>This site uses cookies, including Google Analytics, to understand how visitors use it — things like which pages are viewed and roughly how many people visit. This data is used only for that purpose: it is never sold, and never shared with any other third party. Google processes it on our behalf under <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's own privacy policy</a>. You can decline analytics cookies at any time by clearing your cookies for this site, and nothing about using Lucid's services depends on accepting them.</p>
+    </details>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
     <div class="brand">Lucid <em>/ volunteer-run</em></div>
@@ -1017,13 +1045,14 @@
       <a href="#how">How it works</a>
       <a href="#toolkits">Toolkits</a>
       <a href="#funding">Funding</a>
+      <a href="#privacy">Privacy</a>
     </div>
     <div class="foot-legal">A volunteer initiative backed by Workplace AI Coaching · Australia</div>
   </div>
 </footer>
 
 <div id="cookie-banner" class="cookie-banner" hidden>
-  <p>This site uses cookies, including Google Analytics, to understand how visitors use it.</p>
+  <p>This site uses cookies, including Google Analytics, to understand how visitors use it. Used only for that — never shared or sold. See our <a href="#privacy">Privacy Policy</a>.</p>
   <div class="cookie-actions">
     <button id="cookie-close" class="btn btn-dark">Close</button>
   </div>
