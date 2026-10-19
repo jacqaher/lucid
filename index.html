@@ -509,6 +509,62 @@
   }
   .tool-item p{ font-size:13.8px; color:var(--ink-soft); line-height:1.55; }
 
+  /* ---------- WHERE WE WORK ---------- */
+  .where{ padding:100px 0 20px; }
+  .where-box{
+    border:1px solid var(--line);
+    background:#FFFDF7;
+    border-radius:6px;
+    padding:54px 50px;
+    max-width:860px;
+    margin:0 auto;
+  }
+  .where-box h2{
+    font-family:var(--serif); font-weight:400;
+    font-size:clamp(28px,3.6vw,40px); line-height:1.2;
+    margin:18px 0 14px;
+  }
+  .where-box h2 em{ font-style:italic; color:var(--gold); }
+  .where-lede{ font-size:16.5px; line-height:1.65; color:var(--ink-soft); max-width:560px; margin-bottom:26px; }
+  .where-checks{ list-style:none; display:grid; gap:14px; margin:0 0 30px; padding:0; }
+  .where-checks li{
+    display:flex; align-items:flex-start; gap:14px;
+    font-size:16.5px; line-height:1.5; color:var(--ink);
+  }
+  .where-checks li::before{
+    content:"\2713";
+    flex:0 0 26px; height:26px; margin-top:-1px;
+    border-radius:50%; background:var(--gold); color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    font-size:14px; font-weight:700;
+  }
+  .where-list summary{
+    font-family:var(--mono); font-size:13px; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--gold); cursor:pointer; list-style:none;
+    display:inline-flex; align-items:center; gap:10px;
+    padding:12px 0; min-height:44px;
+  }
+  .where-list summary::-webkit-details-marker{ display:none; }
+  .where-list summary::before{ content:"+"; font-size:18px; width:14px; }
+  .where-list[open] summary::before{ content:"\2013"; }
+  .where-regions{
+    display:grid; grid-template-columns:1fr 1fr; gap:22px 36px;
+    margin:10px 0 18px;
+  }
+  .where-regions h4{
+    font-family:var(--mono); font-size:11.5px; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--gold); font-weight:500; margin-bottom:6px;
+  }
+  .where-regions p{ font-size:13.5px; line-height:1.65; color:var(--ink-soft); }
+  .where-note{ font-size:13px; line-height:1.65; color:var(--ink-soft); max-width:640px; }
+  .where-note a{ color:var(--gold); text-decoration:underline; }
+  @media (max-width:700px){
+    .where{ padding:40px 0 10px; }
+    .where-box{ padding:34px 22px; }
+    .where-checks li, .where-lede{ font-size:16px; }
+    .where-regions{ grid-template-columns:1fr; gap:18px; }
+  }
+
   /* ---------- FUNDING ---------- */
   .funding{ padding:100px 0; }
   @media (max-width:700px){
@@ -950,6 +1006,32 @@
         </div></div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<section class="where" id="where">
+  <div class="wrap">
+    <div class="where-box">
+      <div class="eyebrow">Where we work</div>
+      <h2>Anywhere you can <em>reach us online</em>.</h2>
+      <p class="where-lede">We partner with organisations around the world, entirely online. Tick these three and we can work together:</p>
+      <ul class="where-checks">
+        <li>You have someone who can speak with us in English</li>
+        <li>You have access to a free AI tool, such as ChatGPT, Gemini, Copilot or Claude</li>
+        <li>You're happy to meet in Western Australian (Perth) time, AWST (UTC+8)</li>
+      </ul>
+      <details class="where-list">
+        <summary>See list of countries</summary>
+        <div class="where-regions">
+        <div><h4>Asia &amp; Pacific</h4><p>Australia, New Zealand, Bangladesh, Bhutan, Brunei, Cambodia, Fiji, India, Indonesia, Japan, Kazakhstan, Kiribati, Kyrgyzstan, Laos, Malaysia, Maldives, Marshall Islands, Micronesia, Mongolia, Nauru, Nepal, Pakistan, Palau, Papua New Guinea, Philippines, Samoa, Singapore, Solomon Islands, South Korea, Sri Lanka, Taiwan, Tajikistan, Thailand, Timor-Leste, Tonga, Turkmenistan, Tuvalu, Uzbekistan, Vanuatu, Vietnam</p></div>
+        <div><h4>Middle East &amp; Caucasus</h4><p>Armenia, Azerbaijan, Bahrain, Georgia, Iraq, Israel, Jordan, Kuwait, Lebanon, Oman, Palestine, Qatar, Saudi Arabia, Turkey, United Arab Emirates</p></div>
+        <div><h4>Africa</h4><p>Algeria, Angola, Benin, Botswana, Burkina Faso, Burundi, Cabo Verde, Cameroon, Comoros, Congo, Côte d'Ivoire, DR Congo, Djibouti, Egypt, Equatorial Guinea, Eswatini, Ethiopia, Gabon, Gambia, Ghana, Guinea, Guinea-Bissau, Kenya, Lesotho, Liberia, Madagascar, Malawi, Mali, Mauritania, Mauritius, Morocco, Mozambique, Namibia, Niger, Nigeria, Rwanda, São Tomé and Príncipe, Senegal, Seychelles, Sierra Leone, Somalia, South Africa, Tanzania, Togo, Tunisia, Uganda, Zambia, Zimbabwe</p></div>
+        <div><h4>Europe</h4><p>Albania, Andorra, Austria, Belgium, Bosnia and Herzegovina, Bulgaria, Croatia, Cyprus, Czechia, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Iceland, Ireland, Italy, Kosovo, Latvia, Liechtenstein, Lithuania, Luxembourg, Malta, Moldova, Monaco, Montenegro, Netherlands, North Macedonia, Norway, Poland, Portugal, Romania, San Marino, Serbia, Slovakia, Slovenia, Spain, Sweden, Switzerland, Ukraine, United Kingdom</p></div>
+        <div><h4>The Americas</h4><p>Antigua and Barbuda, Argentina, Bahamas, Barbados, Belize, Bolivia, Brazil, Canada, Chile, Colombia, Costa Rica, Dominica, Dominican Republic, Ecuador, El Salvador, Grenada, Guatemala, Guyana, Haiti, Honduras, Jamaica, Mexico, Nicaragua, Panama, Paraguay, Peru, Saint Kitts and Nevis, Saint Lucia, Saint Vincent and the Grenadines, Suriname, Trinidad and Tobago, United States, Uruguay</p></div>
+        </div>
+        <p class="where-note">Organisations only, not individuals. We can't work in countries under Australian sanctions or where major AI tools aren't available, including China, Russia, Belarus, Iran, North Korea, Syria and Cuba. A few others are assessed case by case. Don't see your country? <a href="mailto:workplaceaicoaching@gmail.com">Email us</a>.</p>
+      </details>
     </div>
   </div>
 </section>
